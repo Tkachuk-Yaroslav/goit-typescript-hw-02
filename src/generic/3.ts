@@ -1,10 +1,26 @@
-// /*
-//   У вас є функція merge, яка поєднує два об'єкти. 
-//   Використовуйте generics, щоб вказати, що ці об'єкти можуть бути будь-якого типу.
-// */
+/*
+  У вас є функція merge, яка поєднує два об'єкти. 
+  Використовуйте generics, щоб вказати, що ці об'єкти можуть бути будь-якого типу.
+*/
 
-// function merge (objA, objB) {
-//   return Object.assign(objA, objB);
-// }
+function merge<T extends Object, K extends Object>(objA: T, objB: K) {
+    return Object.assign(objA, objB);
+}
 
-// export {}
+const topObj = {
+    name: "Object A",
+    position: 1,
+    color: "red",
+    weight: 10,
+};
+
+const bottomObj = {
+    name: "Object B",
+    position: 2,
+    color: "blue",
+    weight: 20,
+    bgColor: 'blue'
+};
+const result = merge(topObj, bottomObj)
+
+export { }
